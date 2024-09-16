@@ -39,7 +39,7 @@ If you require specific LaTeX packages, you can add them directly in the `in-hea
 To modify the style of the title page, edit the `before-body.tex` file. This allows full customization of the title page layout in LaTeX.
 
 ## Table of Contents, List of Figures, and List of Tables
-To ensure the correct page numbering with both Roman and Arabic numerals, the table of contents (TOC), list of tables (LOT), and list of figures (LOF) have been manually integrated into the extension. As a result, these directories are controlled by custom `YAML` parameters:
+To ensure the correct page numbering with both Roman and Arabic numerals, the table of contents (TOC), list of tables (LOT), and list of figures (LOF) have been manually integrated into the extension. As a result, these lists are controlled by custom `YAML` parameters:
 
 - **mytoc:** For the table of contents
 - **mylof:** For the list of figures
