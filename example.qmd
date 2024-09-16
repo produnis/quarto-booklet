@@ -1,0 +1,74 @@
+--- 
+title: This is my little Book
+subtitle: A so called booklet
+author: Mustafa Brikat
+date: 2024-04-22
+cover: cover.jpg
+lang: en # default is "de"
+bibliography: literatur.bib
+#mytoc: false # disable toc
+#mylof: false # disable list of figures
+#mylot: false # disable list of tables
+nocite: |
+  @*
+format:
+  quarto-booklet-pdf
+---
+
+# Preface {-}
+
+Welcome to my booklet.
+
+# This is a test
+
+here we go
+
+## any further
+
+Here is some nice `R`.
+```{r}
+#| label: relations
+#| echo: false
+#| fig-cap: relations
+library(ggplot2)
+
+# get some dummy data
+set.seed(123)
+x <- seq(1, 10, by = 0.1)
+x2 <- seq(-10, 10, by = 0.2)
+x2 <- x2[-c(1:5,97:101)]
+y_linear <- 2*x + 3
+y_exp <- exp(x)
+y_log <- log(x)
+y_quad <- x2^2
+
+# put them into a data.frame
+data <- data.frame(x = c(rep(x, 3), x2),
+                  y = c(y_linear, y_exp, y_log, y_quad),
+                  type = rep(c("linear", "exponential", "logarithm", "square"), each = length(x)))
+
+# and plot it
+ggplot(data, aes(x = x, y = y)) +
+  geom_point(aes(color=type)) +
+  facet_wrap(~ type, scales = "free") +
+  theme(legend.position = "none") 
+```
+
+## table
+
+| Hi | there |
+|----|-------|
+| who? | me? |
+: nonsense
+
+# References {-}
+
+::: {#refs}
+:::
+
+
+\vfill 
+
+# Credits {.unnumbered}
+
+It'sa me, Mario\newline

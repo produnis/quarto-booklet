@@ -1,0 +1,32 @@
+%% load all packages you need -----------------
+\usepackage{lipsum}
+\usepackage{acronym}
+\usepackage{hhline}
+\usepackage{rotating} 
+\usepackage{wrapfig}
+\usepackage{multirow}
+\usepackage[headsepline,footsepline]{scrlayer-scrpage}
+\automark[chapter]{chapter}
+\renewcommand*{\partmark}[1]{}
+\setkomafont{pageheadfoot}{\normalcolor\footnotesize\scshape}
+\setkomafont{pagenumber}{\normalfont\normalsize}
+\ModifyLayer[addvoffset=-.6ex]{scrheadings.foot.above.line}% Linie verschieben
+%----------------------------------------------------------
+
+\setmainfont{Times New Roman}
+
+ % === HSNR colors ==============================
+\definecolor{linkblue}{RGB}{17, 40, 73}
+\definecolor{HSNRblue1}{RGB}{24,81,145}
+\definecolor{HSNRblue2}{RGB}{7,161,226}
+\addtokomafont{chapter}{\color{HSNRblue1}}
+\addtokomafont{section}{\color{HSNRblue1}}
+\addtokomafont{subsection}{\color{HSNRblue2}}
+\addtokomafont{subsubsection}{\color{HSNRblue2}}
+\addtokomafont{paragraph}{\color{HSNRblue2}}
+
+%-- some new colum types
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+
+

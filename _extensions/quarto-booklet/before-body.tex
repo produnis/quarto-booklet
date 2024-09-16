@@ -1,0 +1,57 @@
+\setlength\parindent{0pt}      % Keine Texteinrückung am Absatzanfang
+\begin{titlepage}
+%\vspace*{-30mm}
+\begin{center}
+\noindent\rule[1ex]{\textwidth}{0.5pt}
+ \Huge \textbf{$title$}\\
+ $if(subtitle)$\huge $subtitle$\\$endif$
+  \Large $author$
+\end{center}
+\noindent\rule[1ex]{\textwidth}{0.5pt}
+
+\vspace{26mm}
+%\vfill
+\normalsize
+{\centering
+ \fbox{\includegraphics[width=0.8\textwidth]{$cover$}  }
+\vfill
+\scriptsize $date$\normalsize
+
+}
+\thispagestyle{empty}
+\end{titlepage}
+%--------- End of Titlepage -----------------------------
+
+%---- start roman page counting ------
+\clearpage
+\pagenumbering{roman}
+\bibliographystyle{apalike}
+%--------------------------
+
+
+{
+\hypersetup{linkcolor=HSNRblue1}
+\setcounter{tocdepth}{2}
+$if(mytoc)$
+\tableofcontents
+$endif$
+}
+
+$if(mylof)$
+\listoffigures
+$endif$
+$if(mylot)$
+\listoftables
+$endif$
+%---start arabic page counting from 1
+\clearpage
+\pagenumbering{arabic}
+% --- Page-Heading--------------------
+\clearpairofpagestyles
+\ihead{}
+% \ihead{\thechapter}
+\ohead{\rightmark}
+%\ifoot*{$subtitlel$}
+\ofoot*{\footnotesize\pagemark}
+%-------------------------------------
+
